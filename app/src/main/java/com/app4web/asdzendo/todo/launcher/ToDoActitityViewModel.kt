@@ -1,12 +1,15 @@
 package com.app4web.asdzendo.todo.launcher
 
-import androidx.hilt.lifecycle.ViewModelInject
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.app4web.asdzendo.todo.database.FactRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import timber.log.Timber
+import javax.inject.Inject
 
-class ToDoActitityViewModel @ViewModelInject constructor(
+@HiltViewModel
+class ToDoActitityViewModel @Inject constructor(
        private val factRepository: FactRepository
 ): ViewModel() {
     // Наблюдается (т.к. это LifeData) из ToDoActivity
